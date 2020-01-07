@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Assignment2</string>
+    <string name="splash_screen_text">Assignment 2</string>
+    <string name="login_screen_heading_text">Log in to your account</string>
+    <string name="email_edit_text">Email</string>
+    <string name="email_password_text">Password</string>
+    <string name="login_button_text">Log in</string>
+    <string name="register_button_text">Dont have an account?REGISTER</string>
+    <string name="register_screen_heading_text">Welcome,</string>
+    <string name="register_screen_msg">Please provide your basic information</string>
+    <string name="register_screen_FullName">Full Name</string>
+    <string name="register_screen_Email">Email</string>
+    <string name="register_screen_password">Password</string>
+    <string name="register_screen_gender">Gender</string>
+    <string name="register_screen_dateofbirth">Date of Birth</string>
+    <string name="register_screen_usertype">User Type</string>
+    <string name="register_screen_occupation">Occupation</string>
+    <string name="register_screen_btn_signup">Sign in with different account?</string>
+    <string name="register_screen_btn_continue">Continue</string>
+    <string name="otp_screen_heading">OTP Verification</string>
+    <string name="otp_screen_msg">Enter the verification code send to your number via sms.</string>
+    <string name="otp_screen_btn_resend">Resend</string>
+    <string name="otp_screen_btn_submit">Submit</string>
+    <string name="wrong_input">Wrong inputs</string>
+    <string name="username_password_error_msg">Wrong inputs</string>
+    <string name="logged_in_msg">Logged in Successfully</string>
+    <string name="invalid_email">Invalid email address</string>
+
+
+
+
+
+</resources>

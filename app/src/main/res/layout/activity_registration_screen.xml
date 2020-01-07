@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    tools:context=".RegistrationScreen">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/register_btn_width"
+        android:layout_height="@dimen/register_btn_heigth"
+        android:background="@drawable/ic_back_btn"
+        android:layout_marginTop="@dimen/register_margin_8dp"
+        android:layout_marginStart="@dimen/margin_large"/>
+
+    <TextView
+        android:id="@+id/tv_register_heading"
+        android:layout_below="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_screen_heading_text"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_large"
+        android:textSize="@dimen/text_sz_large"
+        android:textColor="@color/dark_green"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tv_register_msg"
+        android:layout_below="@+id/tv_register_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_screen_msg"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:textSize="@dimen/text_sz_small"
+        android:textColor="@color/dark_green" />
+    <ImageView
+        android:id="@+id/iv_profile_pic"
+        android:layout_below="@+id/tv_register_msg"
+        android:layout_width="@dimen/profile_pic_width"
+        android:layout_height="@dimen/profile_pic_heigth"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_user_pic" />
+
+    <EditText
+        android:id="@+id/et_full_name"
+        android:layout_below="@+id/iv_profile_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:hint="@string/register_screen_FullName"
+        android:inputType="text"
+        android:textColorHint="@color/color_green_lite"
+        android:textColor="@color/color_black" />
+
+    <EditText
+        android:id="@+id/et_register_email"
+        android:layout_below="@+id/et_full_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:hint="@string/register_screen_Email"
+        android:textColorHint="@color/color_green_lite"
+        android:textColor="@color/color_black" />
+
+    <EditText
+        android:id="@+id/et_register_password"
+        android:layout_below="@+id/et_register_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:hint="@string/register_screen_password"
+        android:textColorHint="@color/color_green_lite"
+        android:textColor="@color/color_black" />
+
+    <EditText
+        android:id="@+id/et_gender"
+        android:layout_below="@+id/et_register_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:hint="@string/register_screen_gender"
+        android:textColorHint="@color/color_green_lite"
+        android:textColor="@color/color_black" />
+
+    <EditText
+        android:id="@+id/et_date_of_birth"
+        android:layout_below="@+id/et_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:hint="@string/register_screen_dateofbirth"
+        android:textColorHint="@color/color_green_lite"
+        android:textColor="@color/color_black" />
+
+    <EditText
+        android:id="@+id/et_user_type"
+        android:layout_below="@+id/et_date_of_birth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:hint="@string/register_screen_usertype"
+        android:textColorHint="@color/color_green_lite"
+        android:textColor="@color/color_black" />
+
+    <EditText
+        android:id="@+id/et_occupation"
+        android:layout_below="@+id/et_user_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:hint="@string/register_screen_occupation"
+        android:textColorHint="@color/color_green_lite"
+        android:textColor="@color/color_black"/>
+
+        <TextView
+            android:id="@+id/tv_different_account"
+            android:layout_below="@id/et_occupation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_screen_btn_signup"
+            android:textColor="@color/dark_green"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_extra_large"
+            android:textSize="@dimen/text_sz_medium" />
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_below="@id/tv_different_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/register_margin_8dp"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:text="@string/register_screen_btn_continue"
+        android:textColor="@color/dark_green"
+        android:background="@drawable/btn_continue_style" />
+
+</RelativeLayout>

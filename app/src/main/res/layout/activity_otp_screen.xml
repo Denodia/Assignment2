@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    tools:context=".OtpScreen">
+
+    <ImageView
+        android:id="@+id/otp_iv_back"
+        android:layout_width="@dimen/register_btn_width"
+        android:layout_height="@dimen/register_btn_heigth"
+        android:background="@drawable/ic_back_btn"
+        android:layout_marginTop="@dimen/otp_back_15dp"
+        android:layout_marginStart="@dimen/margin_large"/>
+
+    <TextView
+        android:id="@+id/tv_otp_heading"
+        android:layout_below="@+id/otp_iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/otp_screen_heading"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_large"
+        android:textSize="@dimen/text_sz_large"
+        android:textColor="@color/dark_green"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tv_otp_msg"
+        android:layout_below="@+id/tv_otp_heading"
+        android:layout_width="189dp"
+        android:layout_height="wrap_content"
+        android:text="@string/otp_screen_msg"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:textSize="@dimen/text_sz_small"
+        android:textColor="@color/dark_green" />
+
+    <LinearLayout
+        android:id="@+id/otp_layout"
+        android:layout_below="@+id/tv_otp_msg"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_extra_large"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:weightSum="4"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/et_num1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="1"
+            android:textColor="@color/color_black"
+            android:cursorVisible="false"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/et_num2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="1"
+            android:imeOptions="actionNext"
+            android:cursorVisible="false"
+            android:inputType="number"
+            android:textColor="@color/color_black"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/et_num3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="1"
+            android:textColor="@color/color_black"
+            android:imeOptions="actionNext"
+            android:cursorVisible="false"
+            android:inputType="number"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/et_num4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_black"
+            android:maxLength="1"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:cursorVisible="false"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/otp_btn_layout"
+        android:layout_below="@+id/otp_layout"
+        android:layout_marginTop="@dimen/margin_extra_large"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <Button
+            android:id="@+id/otp_btn_resend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/otp_screen_btn_resend"
+            android:textAllCaps="false"
+            android:background="@drawable/btn_round_resend"
+            android:textColor="@color/dark_green"
+            android:layout_weight="1"
+            ></Button>
+
+        <Button
+            android:id="@+id/otp_btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/otp_screen_btn_submit"
+            android:layout_marginStart="@dimen/margin_large"
+            android:textColor="@color/color_white"
+            android:textAllCaps="false"
+            android:background="@drawable/btn_round_submit"
+            android:layout_weight="1"
+            ></Button>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_splash_screen_text_size">40sp</dimen>
+    <dimen name="margin_small">2dp</dimen>
+    <dimen name="margin_medium">15dp</dimen>
+    <dimen name="margin_large">25dp</dimen>
+    <dimen name="margin_ic_eye">35dp</dimen>
+    <dimen name="margin_extra_large">52dp</dimen>
+    <dimen name="login_margin_extra_large">80dp</dimen>
+    <dimen name="text_sz_small">14sp</dimen>
+    <dimen name="text_sz_medium">18sp</dimen>
+    <dimen name="text_sz_large">25sp</dimen>
+    <dimen name="text_sz_extra_large">35sp</dimen>
+    <dimen name="login_heading_width">300dp</dimen>
+    <dimen name="register_margin_extra_large">150dp</dimen>
+    <dimen name="register_btn_width">20dp</dimen>
+    <dimen name="register_btn_heigth">20dp</dimen>
+    <dimen name="profile_pic_width">90dp</dimen>
+    <dimen name="profile_pic_heigth">90dp</dimen>
+    <dimen name="register_margin_8dp">8dp</dimen>
+    <dimen name="otp_back_15dp">15dp</dimen>
+
+    <dimen name="margin_bt_register">65dp</dimen>
+
+
+</resources>
