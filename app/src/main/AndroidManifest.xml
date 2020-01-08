@@ -12,14 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".OtpScreen"
-            ></activity>
-        <activity
-            android:name=".RegistrationScreen"
-            />
-        <activity
-            android:name=".LoginScreen"
-            />
+        <activity android:name=".LoginScreen"></activity>
+        <activity android:name=".OtpScreen" />
+        <activity android:name=".RegistrationScreen" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/AppTheme.Splash">

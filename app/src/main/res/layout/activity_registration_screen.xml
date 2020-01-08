@@ -55,6 +55,7 @@
         android:layout_marginStart="@dimen/margin_large"
         android:layout_marginEnd="@dimen/margin_large"
         android:hint="@string/register_screen_FullName"
+        android:digits="@string/all_alpha"
         android:inputType="text"
         android:singleLine="true"
         android:textColorHint="@color/color_green_lite"
@@ -95,6 +96,7 @@
         android:layout_marginStart="@dimen/margin_large"
         android:layout_marginEnd="@dimen/margin_large"
         android:hint="@string/register_screen_gender"
+        android:digits="@string/all_alpha"
         android:textColorHint="@color/color_green_lite"
         android:singleLine="true"
         android:textColor="@color/color_black" />
