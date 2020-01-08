@@ -181,7 +181,7 @@ public class RegistrationScreen extends AppCompatActivity {
             et_user_type.setError(null);
             return true;
         }
-        }
+    }
     private boolean validateoccupation() {
         String useroccupation = et_occupation.getText().toString().trim();
 
@@ -200,5 +200,5 @@ public class RegistrationScreen extends AppCompatActivity {
             return true;
         }
     }
-    }
+}
 

@@ -14,7 +14,7 @@
     <dimen name="text_sz_large">25sp</dimen>
     <dimen name="text_sz_extra_large">35sp</dimen>
     <dimen name="login_heading_width">300dp</dimen>
-    <dimen name="register_margin_extra_large">150dp</dimen>
+    <dimen name="register_margin_extra_large">120dp</dimen>
     <dimen name="register_btn_width">20dp</dimen>
     <dimen name="register_btn_heigth">20dp</dimen>
     <dimen name="profile_pic_width">90dp</dimen>

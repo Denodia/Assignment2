@@ -57,7 +57,6 @@
         android:hint="@string/register_screen_FullName"
         android:inputType="text"
         android:singleLine="true"
-        android:digits="@string/all_alpha"
         android:textColorHint="@color/color_green_lite"
         android:textColor="@color/color_black" />
 
@@ -97,7 +96,6 @@
         android:layout_marginEnd="@dimen/margin_large"
         android:hint="@string/register_screen_gender"
         android:textColorHint="@color/color_green_lite"
-        android:digits="@string/all_alpha"
         android:singleLine="true"
         android:textColor="@color/color_black" />
 
@@ -111,7 +109,6 @@
         android:layout_marginEnd="@dimen/margin_large"
         android:hint="@string/register_screen_dateofbirth"
         android:singleLine="true"
-        android:inputType="date"
         android:textColorHint="@color/color_green_lite"
         android:textColor="@color/color_black" />
 
@@ -125,7 +122,6 @@
         android:layout_marginEnd="@dimen/margin_large"
         android:hint="@string/register_screen_usertype"
         android:singleLine="true"
-        android:digits="@string/all_alpha"
         android:textColorHint="@color/color_green_lite"
         android:textColor="@color/color_black" />
 
@@ -139,26 +135,25 @@
         android:layout_marginEnd="@dimen/margin_large"
         android:hint="@string/register_screen_occupation"
         android:singleLine="true"
-        android:digits="@string/all_alpha"
         android:textColorHint="@color/color_green_lite"
         android:textColor="@color/color_black"/>
 
-        <TextView
-            android:id="@+id/tv_different_account"
-            android:layout_below="@id/et_occupation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register_screen_btn_signup"
-            android:textColor="@color/dark_green"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/margin_extra_large"
-            android:textSize="@dimen/text_sz_medium" />
+    <TextView
+        android:id="@+id/tv_different_account"
+        android:layout_below="@id/et_occupation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_screen_btn_signup"
+        android:textColor="@color/dark_green"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:textSize="@dimen/text_sz_medium" />
 
     <Button
         android:id="@+id/btn_continue"
         android:layout_below="@id/tv_different_account"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/margin_extra_large"
         android:layout_marginTop="@dimen/register_margin_8dp"
         android:layout_marginStart="@dimen/margin_small"
         android:layout_marginEnd="@dimen/margin_small"

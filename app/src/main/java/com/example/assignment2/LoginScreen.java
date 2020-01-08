@@ -1,10 +1,12 @@
 package com.example.assignment2;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -30,6 +32,7 @@ public class LoginScreen extends AppCompatActivity {
     TextView textView_register;
     EditText email,password;
     ImageView password_visible;
+    Boolean flag=true;
     Button login;
 
     @Override
@@ -40,7 +43,7 @@ public class LoginScreen extends AppCompatActivity {
         login=findViewById(R.id.bt_login);
         email=findViewById(R.id.et_email);
         password=findViewById(R.id.et_password);
-        password_visible=findViewById(R.id.iv_password);
+        password_visible=(ImageView) findViewById(R.id.iv_password);
 
         String text="Dont have an account?REGISTER";
         SpannableString ss = new SpannableString(text);
@@ -68,6 +71,29 @@ public class LoginScreen extends AppCompatActivity {
 
         textView_register.setText(ss);
         textView_register.setMovementMethod(LinkMovementMethod.getInstance());
+
+
+        password_visible.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onClick(View v) {
+
+                if(flag==true){
+                    password_visible.setBackground(getResources().getDrawable(R.drawable.ic_visible_pass));
+
+                    password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    flag=false;
+                }
+                else{
+
+                    password_visible.setBackground(getResources().getDrawable(R.drawable.ic_hide_pass));
+
+                    password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    flag=true;
+
+                }
+            }
+        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,23 +135,6 @@ public class LoginScreen extends AppCompatActivity {
         });
     }
 
-    public void ShowHidePass(View view){
 
-        if(view.getId()==R.id.iv_password){
 
-            if(password.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
-                ((ImageView)(view)).setImageResource(R.drawable.ic_show_pass);
-
-                //Show Password
-                password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-            }
-            else{
-                ((ImageView)(view)).setImageResource(R.drawable.ic_hide_pass);
-
-                //Hide Password
-                password.setTransformationMethod(PasswordTransformationMethod.getInstance());
-
-            }
-        }
-    }
 }

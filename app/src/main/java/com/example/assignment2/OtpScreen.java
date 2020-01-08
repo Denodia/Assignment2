@@ -2,11 +2,15 @@ package com.example.assignment2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -75,6 +79,43 @@ public class OtpScreen extends AppCompatActivity {
                     snackbar2.setActionTextColor(Color.parseColor("#082c3b"));
                     snackbar2.show();
                 }
+            }
+        });
+
+        et_num2.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (keyCode == KeyEvent.KEYCODE_DEL) {
+                    et_num2.clearFocus();
+                    et_num1.requestFocus();
+                    et_num1.setText("");
+                }
+                return false;
+            }
+        });
+
+        et_num3.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_DEL) {
+                    et_num3.clearFocus();
+                    et_num2.requestFocus();
+                    et_num2.setText("");
+                }
+                return false;
+            }
+        });
+
+        et_num4.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_DEL) {
+                    et_num4.clearFocus();
+                    et_num3.requestFocus();
+                    et_num3.setText("");
+                }
+                return false;
             }
         });
 
