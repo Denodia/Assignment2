@@ -56,6 +56,7 @@
         android:layout_marginEnd="@dimen/margin_large"
         android:hint="@string/register_screen_FullName"
         android:inputType="text"
+        android:singleLine="true"
         android:textColorHint="@color/color_green_lite"
         android:textColor="@color/color_black" />
 
@@ -68,6 +69,7 @@
         android:layout_marginStart="@dimen/margin_large"
         android:layout_marginEnd="@dimen/margin_large"
         android:hint="@string/register_screen_Email"
+        android:singleLine="true"
         android:textColorHint="@color/color_green_lite"
         android:textColor="@color/color_black" />
 
@@ -80,6 +82,7 @@
         android:layout_marginStart="@dimen/margin_large"
         android:layout_marginEnd="@dimen/margin_large"
         android:hint="@string/register_screen_password"
+        android:singleLine="true"
         android:textColorHint="@color/color_green_lite"
         android:textColor="@color/color_black" />
 
@@ -93,6 +96,7 @@
         android:layout_marginEnd="@dimen/margin_large"
         android:hint="@string/register_screen_gender"
         android:textColorHint="@color/color_green_lite"
+        android:singleLine="true"
         android:textColor="@color/color_black" />
 
     <EditText
@@ -104,6 +108,7 @@
         android:layout_marginStart="@dimen/margin_large"
         android:layout_marginEnd="@dimen/margin_large"
         android:hint="@string/register_screen_dateofbirth"
+        android:singleLine="true"
         android:textColorHint="@color/color_green_lite"
         android:textColor="@color/color_black" />
 
@@ -116,6 +121,7 @@
         android:layout_marginStart="@dimen/margin_large"
         android:layout_marginEnd="@dimen/margin_large"
         android:hint="@string/register_screen_usertype"
+        android:singleLine="true"
         android:textColorHint="@color/color_green_lite"
         android:textColor="@color/color_black" />
 
@@ -128,6 +134,7 @@
         android:layout_marginStart="@dimen/margin_large"
         android:layout_marginEnd="@dimen/margin_large"
         android:hint="@string/register_screen_occupation"
+        android:singleLine="true"
         android:textColorHint="@color/color_green_lite"
         android:textColor="@color/color_black"/>
 

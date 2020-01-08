@@ -29,6 +29,7 @@
         android:layout_marginEnd="@dimen/margin_extra_large"
         android:hint="@string/email_edit_text"
         android:textColorHint="@color/color_green_lite"
+        android:singleLine="true"
         android:textColor="@color/color_black"
         />
     <EditText
@@ -41,6 +42,7 @@
         android:layout_marginEnd="@dimen/margin_extra_large"
         android:hint="@string/email_password_text"
         android:textColorHint="@color/color_green_lite"
+        android:singleLine="true"
         android:textColor="@color/color_black"
         android:inputType="textPassword"
 

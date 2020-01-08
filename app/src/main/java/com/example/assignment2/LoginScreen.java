@@ -29,7 +29,7 @@ public class LoginScreen extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     TextView textView_register;
     EditText email,password;
-    ImageView passwordvisible;
+    ImageView password_visible;
     Button login;
 
     @Override
@@ -40,7 +40,7 @@ public class LoginScreen extends AppCompatActivity {
         login=findViewById(R.id.bt_login);
         email=findViewById(R.id.et_email);
         password=findViewById(R.id.et_password);
-        passwordvisible=findViewById(R.id.iv_password);
+        password_visible=findViewById(R.id.iv_password);
 
         String text="Dont have an account?REGISTER";
         SpannableString ss = new SpannableString(text);
