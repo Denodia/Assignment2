@@ -57,6 +57,7 @@
         android:hint="@string/register_screen_FullName"
         android:inputType="text"
         android:singleLine="true"
+        android:digits="@string/all_alpha"
         android:textColorHint="@color/color_green_lite"
         android:textColor="@color/color_black" />
 

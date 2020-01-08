@@ -25,6 +25,7 @@
     <string name="username_password_error_msg">Wrong inputs</string>
     <string name="logged_in_msg">Logged in Successfully</string>
     <string name="invalid_email">Invalid email address</string>
+    <string name="all_alpha">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
 
 
 
