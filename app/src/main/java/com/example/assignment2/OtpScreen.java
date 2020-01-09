@@ -22,6 +22,8 @@ public class OtpScreen extends AppCompatActivity {
     ImageView backbutton;
     Button resend,submit;
     EditText et_num1,et_num2,et_num3,et_num4;
+    String name,email,password,dateofbirth,gender,usertype,occupation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,14 +36,36 @@ public class OtpScreen extends AppCompatActivity {
         et_num3=findViewById(R.id.et_num3);
         et_num4=findViewById(R.id.et_num4);
 
+        Intent intent=getIntent();
+
+        name=intent.getStringExtra("full_name");
+        email=intent.getStringExtra("email");
+        password=intent.getStringExtra("password");
+        dateofbirth=intent.getStringExtra("dateofbirth");
+        gender=intent.getStringExtra("gender");
+        usertype=intent.getStringExtra("usertype");
+        occupation=intent.getStringExtra("occupation");
+
+
+
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent3=new Intent(OtpScreen.this,RegistrationScreen.class);
+                Intent intent3 = new Intent(OtpScreen.this, RegistrationScreen.class);
+                intent3.putExtra("full_name",name );
+                intent3.putExtra("email",email );
+                intent3.putExtra("password",password );
+                intent3.putExtra("gender",gender );
+                intent3.putExtra("dateofbirth",dateofbirth );
+                intent3.putExtra("usertype",usertype );
+                intent3.putExtra("occupation",occupation );
+
                 startActivity(intent3);
                 finish();
+
             }
         });
+
 
         resend.setOnClickListener(new View.OnClickListener() {
             @Override

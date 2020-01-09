@@ -5,6 +5,7 @@
     <dimen name="activity_splash_screen_text_size">40sp</dimen>
     <dimen name="margin_small">2dp</dimen>
     <dimen name="margin_medium">15dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
     <dimen name="margin_large">25dp</dimen>
     <dimen name="margin_ic_eye">35dp</dimen>
     <dimen name="margin_extra_large">52dp</dimen>
@@ -23,6 +24,8 @@
     <dimen name="otp_back_15dp">15dp</dimen>
 
     <dimen name="margin_bt_register">65dp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="margin_15dp">15dp</dimen>
 
 
 </resources>

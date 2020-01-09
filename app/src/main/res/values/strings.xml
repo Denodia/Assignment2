@@ -26,6 +26,8 @@
     <string name="logged_in_msg">Logged in Successfully</string>
     <string name="invalid_email">Invalid email address</string>
     <string name="all_alpha">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz</string>
+    <string name="password_show_text">Show</string>
+    <string name="tv_hide">Hide</string>
 
 
 </resources>

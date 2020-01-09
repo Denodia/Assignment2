@@ -5,7 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.Selection;
+import android.text.TextWatcher;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,10 +28,12 @@ import java.util.regex.Pattern;
 public class RegistrationScreen extends AppCompatActivity {
     private static final Pattern PASSWORD_PATTERN =
             Pattern.compile("^" + "(?=.*[a-zA-Z])" + "(?=.*[@#$%^&+=])" + "(?=\\S+$)" + ".{4,}" + "$");
-    TextView sign_in_another_account;
+    TextView sign_in_another_account,show_pass;
     ImageView back_button;
     Button continue_btn;
     EditText et_full_name, et_email, et_password, et_gender, et_date_of_birth, et_user_type, et_occupation;
+    String name,email,password,dateofbirth,gender,usertype,occupation;
+    boolean flag=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +49,71 @@ public class RegistrationScreen extends AppCompatActivity {
         et_date_of_birth = findViewById(R.id.et_date_of_birth);
         et_user_type = findViewById(R.id.et_user_type);
         et_occupation = findViewById(R.id.et_occupation);
+        show_pass=findViewById(R.id.tv_show_pass);
+
+        et_password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (et_password.getText().toString().trim().length() > 0) {
+                   show_pass.setText(R.string.password_show_text);
+                   show_pass.setTextColor(getResources().getColor(R.color.blue));
+                }
+                else{
+                    show_pass.setText("");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+        show_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text=show_pass.getText().toString();
+                String show="Show";
+                if(text.equalsIgnoreCase(show)) {
+                    et_password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    show_pass.setText(R.string.tv_hide);
+                    int position = et_password.length();
+                    Editable etext = et_password.getText();
+                    Selection.setSelection(etext, position);
+                }
+                else{
+                    et_password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    show_pass.setText(R.string.password_show_text);
+                    int position = et_password.length();
+                    Editable etext = et_password.getText();
+                    Selection.setSelection(etext, position);
+                }
+            }
+        });
+
+        Intent intent=getIntent();
+        name=intent.getStringExtra("full_name");
+        email=intent.getStringExtra("email");
+        password=intent.getStringExtra("password");
+        dateofbirth=intent.getStringExtra("dateofbirth");
+        gender=intent.getStringExtra("gender");
+        usertype=intent.getStringExtra("usertype");
+        occupation=intent.getStringExtra("occupation");
+
+        et_full_name.setText(name);
+        et_email.setText(email);
+        et_password.setText(password);
+        et_gender.setText(gender);
+        et_date_of_birth.setText(dateofbirth);
+        et_user_type.setText(usertype);
+        et_occupation.setText(occupation);
+
 
 
         back_button.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +149,22 @@ public class RegistrationScreen extends AppCompatActivity {
                     snackbar.show();
                     return;
                 } else {
+                    String name=et_full_name.getText().toString();
+                    String email=et_email.getText().toString();
+                    String password=et_password.getText().toString();
+                    String gender=et_gender.getText().toString();
+                    String dateofbirth=et_date_of_birth.getText().toString();
+                    String usertype=et_user_type.getText().toString();
+                    String occupation=et_occupation.getText().toString();
                     Intent intent7 = new Intent(RegistrationScreen.this, OtpScreen.class);
+
+                    intent7.putExtra("full_name",name );
+                    intent7.putExtra("email",email );
+                    intent7.putExtra("password",password );
+                    intent7.putExtra("gender",gender );
+                    intent7.putExtra("dateofbirth",dateofbirth );
+                    intent7.putExtra("usertype",usertype );
+                    intent7.putExtra("occupation",occupation );
                     startActivity(intent7);
                     finish();
                 }

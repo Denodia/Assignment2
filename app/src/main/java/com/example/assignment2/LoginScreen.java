@@ -44,7 +44,7 @@ public class LoginScreen extends AppCompatActivity {
         login=findViewById(R.id.bt_login);
         email=findViewById(R.id.et_email);
         password=findViewById(R.id.et_password);
-        password_visible=(ImageView) findViewById(R.id.iv_password);
+        password_visible= findViewById(R.id.iv_password);
 
         String text="Dont have an account?REGISTER";
         SpannableString ss = new SpannableString(text);
