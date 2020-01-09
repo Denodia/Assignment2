@@ -17,6 +17,7 @@ import android.text.method.LinkMovementMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -73,6 +74,19 @@ public class LoginScreen extends AppCompatActivity {
         textView_register.setText(ss);
         textView_register.setMovementMethod(LinkMovementMethod.getInstance());
 
+        password.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // If the event is a key-down event on the "enter" button
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) |
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                   password.clearFocus();
+                   login.requestFocus();
+                   loginAction();
+                  return true;
+                }
+                return false;
+            }
+        });
 
         password_visible.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -99,41 +113,46 @@ public class LoginScreen extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (email.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
-                    Snackbar snackbar = Snackbar
-                            .make(findViewById(android.R.id.content), R.string.username_password_error_msg, Snackbar.LENGTH_LONG)
-                            .setAction("RETRY", new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                }
-                            });
-                    snackbar.setActionTextColor(Color.parseColor("#082c3b"));
-                    snackbar.show();
-                } else {
-                    if (email.getText().toString().trim().matches(emailPattern)) {
-                        Snackbar snackbar = Snackbar
-                                .make(findViewById(android.R.id.content), R.string.logged_in_msg, Snackbar.LENGTH_LONG)
-                                .setAction("RETRY", new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                    }
-                                });
-                        snackbar.setActionTextColor(Color.parseColor("#082c3b"));
-                        snackbar.show();
-                    } else {
-                        Snackbar snackbar = Snackbar
-                                .make(findViewById(android.R.id.content), R.string.invalid_email, Snackbar.LENGTH_LONG)
-                                .setAction("RETRY", new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                    }
-                                });
-                        snackbar.setActionTextColor(Color.parseColor("#082c3b"));
-                        snackbar.show();
-                    }
-                }
+               loginAction();
             }
         });
+    }
+
+    public void loginAction(){
+
+        if (email.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
+            Snackbar snackbar = Snackbar
+                    .make(findViewById(android.R.id.content), R.string.username_password_error_msg, Snackbar.LENGTH_LONG)
+                    .setAction("RETRY", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                        }
+                    });
+            snackbar.setActionTextColor(Color.parseColor("#082c3b"));
+            snackbar.show();
+        } else {
+            if (email.getText().toString().trim().matches(emailPattern)) {
+                Snackbar snackbar = Snackbar
+                        .make(findViewById(android.R.id.content), R.string.logged_in_msg, Snackbar.LENGTH_LONG)
+                        .setAction("RETRY", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                            }
+                        });
+                snackbar.setActionTextColor(Color.parseColor("#082c3b"));
+                snackbar.show();
+            } else {
+                Snackbar snackbar = Snackbar
+                        .make(findViewById(android.R.id.content), R.string.invalid_email, Snackbar.LENGTH_LONG)
+                        .setAction("RETRY", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                            }
+                        });
+                snackbar.setActionTextColor(Color.parseColor("#082c3b"));
+                snackbar.show();
+            }
+        }
     }
 
 
