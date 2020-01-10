@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.Selection;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
@@ -77,7 +79,7 @@ public class LoginScreen extends AppCompatActivity {
         password.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 // If the event is a key-down event on the "enter" button
-                if ((event.getAction() == KeyEvent.ACTION_DOWN) |
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
                         (keyCode == KeyEvent.KEYCODE_ENTER)) {
                    password.clearFocus();
                    login.requestFocus();
@@ -97,6 +99,9 @@ public class LoginScreen extends AppCompatActivity {
                     password_visible.setBackground(getResources().getDrawable(R.drawable.ic_visible_pass));
 
                     password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    int position = password.length();
+                    Editable etext = password.getText();
+                    Selection.setSelection(etext, position);
                     flag=false;
                 }
                 else{
@@ -104,6 +109,9 @@ public class LoginScreen extends AppCompatActivity {
                     password_visible.setBackground(getResources().getDrawable(R.drawable.ic_hide_pass));
 
                     password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    int position = password.length();
+                    Editable etext = password.getText();
+                    Selection.setSelection(etext, position);
                     flag=true;
 
                 }
