@@ -156,7 +156,4 @@ public class LoginScreen extends AppCompatActivity {
             }
         }
     }
-
-
-//hsbdfh
 }
