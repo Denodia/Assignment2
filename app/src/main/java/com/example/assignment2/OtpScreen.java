@@ -172,6 +172,7 @@ public class OtpScreen extends AppCompatActivity {
                 if (et_num1.getText().toString().trim().length() > 0) {
                     et_num1.clearFocus();
                     et_num2.requestFocus();
+                    et_num2.setCursorVisible(true);
                 }
             }
 

@@ -55,6 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxLength="1"
+            android:textAlignment="center"
             android:textColor="@color/color_black"
             android:cursorVisible="false"
             android:imeOptions="actionNext"
@@ -69,6 +70,7 @@
             android:imeOptions="actionNext"
             android:cursorVisible="false"
             android:inputType="phone"
+            android:textAlignment="center"
             android:textColor="@color/color_black"
             android:layout_weight="1"/>
 
@@ -79,6 +81,7 @@
             android:maxLength="1"
             android:textColor="@color/color_black"
             android:imeOptions="actionNext"
+            android:textAlignment="center"
             android:cursorVisible="false"
             android:inputType="phone"
             android:layout_weight="1"/>
@@ -90,6 +93,7 @@
             android:textColor="@color/color_black"
             android:maxLength="1"
             android:imeOptions="actionNext"
+            android:textAlignment="center"
             android:inputType="phone"
             android:cursorVisible="false"
             android:layout_weight="1"/>

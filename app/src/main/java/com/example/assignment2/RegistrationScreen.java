@@ -2,23 +2,31 @@ package com.example.assignment2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.Selection;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,9 +36,12 @@ public class RegistrationScreen extends AppCompatActivity {
     TextView sign_in_another_account,show_pass;
     ImageView back_button;
     Button continue_btn;
-    EditText et_full_name, et_email, et_password, et_gender, et_date_of_birth, et_user_type, et_occupation;
+    private EditText et_full_name, et_email, et_password, et_gender, et_date_of_birth, et_user_type, et_occupation;
     String name,email,password,dateofbirth,gender,usertype,occupation;
     boolean flag=true;
+
+    private static final String TAG = "RegistrationScreen";
+    private DatePickerDialog.OnDateSetListener mDateSetListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +55,44 @@ public class RegistrationScreen extends AppCompatActivity {
         et_password = findViewById(R.id.et_register_password);
         et_gender = findViewById(R.id.et_gender);
         et_date_of_birth = findViewById(R.id.et_date_of_birth);
+        et_date_of_birth.setInputType(InputType.TYPE_NULL);
+        et_date_of_birth.requestFocus();
+
         et_user_type = findViewById(R.id.et_user_type);
         et_occupation = findViewById(R.id.et_occupation);
         show_pass=findViewById(R.id.tv_show_pass);
+
+        et_date_of_birth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        RegistrationScreen.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener,
+                        year,month,day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
+        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                Log.d(TAG, "onDateSet: mm/dd/yyy: " + month + "/" + day + "/" + year);
+
+                String date = month + "/" + day + "/" + year;
+               et_date_of_birth.setText(date);
+            }
+        };
+
+
+
 
         et_password.addTextChangedListener(new TextWatcher() {
             @Override
@@ -170,6 +216,7 @@ public class RegistrationScreen extends AppCompatActivity {
 
     }
 
+
     private boolean validateEmail() {
         String textinput = et_email.getText().toString().trim();
 
@@ -267,6 +314,7 @@ public class RegistrationScreen extends AppCompatActivity {
             return true;
         }
     }
+
     private boolean validateoccupation() {
         String useroccupation = et_occupation.getText().toString().trim();
 
